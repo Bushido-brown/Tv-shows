@@ -296,9 +296,9 @@ img {
   max-width: 100%;
   height: auto;
 }
- .adjust{
 
- }
+.adjust {}
+
 /*=============== MODAL ===============*/
 .container {
   margin-left: 1rem;
@@ -598,6 +598,8 @@ img {
   display: flex;
   flex-flow: column;
   gap: 20px;
+  position: absolute;
+  margin: 36px 35px 343px;
 }
 
 @media screen and (min-width: 1024px) {
