@@ -20,10 +20,8 @@ const homeItems = document.querySelector('.movie-section__items');
 getMovieData(0, dvd, 50).then((movieList) => {
   displayMovies(movieList, dvdID, 'movie');
 
-
   const all = document.querySelectorAll('#movie-section > .movie-wrapper');
   totalItems(all, homeItems);
-
 });
 
 const bluItems = document.querySelector('.bluRay-section__items');
@@ -60,4 +58,4 @@ bluLink.addEventListener('click', () => {
   aboutSection.classList.add('toggle');
   bluSection.classList.remove('toggle');
 });
-showModal()
+showModal();
