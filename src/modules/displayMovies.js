@@ -156,6 +156,20 @@ function createPopUp(item) {
                 </div>
                 </div>
 
+                <div class="meal-comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <div class="user-identifier">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="comment-user-name">
+                            <p>userName</p>
+                            <p class="comment-date">2021-01-10</p>
+                        </div>
+                    </div>
+                    <p>"comment"</p>
+                </div>
+            </div>
+
             <div class="add-comments" id="mealId">
             <form action="#" id="comment-form">
             <div> <input type="text" name="name" id="name" placeholder="Your Name" required></div>
