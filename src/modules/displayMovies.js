@@ -155,6 +155,16 @@ function createPopUp(item) {
                     <ul class="modal-section__ul-movie-genres" id="modalMovieGenres"></ul>
                 </div>
                 </div>
+
+            <div class="add-comments" id="mealId">
+            <form action="#" id="comment-form">
+            <div> <input type="text" name="name" id="name" placeholder="Your Name" required></div>
+             <div>    <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your insights"    required></textarea></div>
+             
+            <button type="submit">Comment</button>
+        </form>
+            </div>
+           
             </div>
     </section>
 
