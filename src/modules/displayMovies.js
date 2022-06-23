@@ -1,10 +1,13 @@
-import { updateLikes, setLike } from './likeFunctionality.js';
+import { updateLikes, setLike, setComment } from './likeFunctionality.js';
+import List from './newmodel.js';
 
 const createmodal = document.querySelector('.modal__content');
 const modalContainer = document.getElementById('modal-container');
+const nameValue = document.querySelector('.name')
+const commentValue = document.querySelector('.comment')
 
-function createPopUp(item) {
-  createmodal.innerHTML = `
+function createPopUp(item,) {
+    createmodal.innerHTML = `
                 <img class='modal__img ' src=${item.image.original}>   
   
           <button class="modal-section__back-btn close-modal" id="backBtn close-modal">
@@ -110,77 +113,83 @@ function createPopUp(item) {
               </div>
       </section>
   
-  
-  
-  
-  
-  
   `;
 }
 
+
+
+export const getInputData = () => {
+    if (nameValue && commentValue) {
+        const newuser = new List(nameValue.value, commentValue.value)
+        setComment(newuser)
+        nameValue.value = '';
+        commentValue.value = '';
+    }
+}
+
 function closeModal() {
-  const modalContainer = document.getElementById('modal-container');
-  modalContainer.classList.remove('show-modal');
+    const modalContainer = document.getElementById('modal-container');
+    modalContainer.classList.remove('show-modal');
 }
 
 const displayMovies = async (movieList, appId, section) => {
-  const movieSection = document.querySelector(`#${section}-section`);
-  movieSection.innerHTML = '';
-  movieList.forEach((item) => {
-    const mainDiv = document.createElement('div');
-    mainDiv.className = 'movie-wrapper modal-container';
-    mainDiv.id = `${section}${item.id}`;
-    const details = document.createElement('div');
-    details.className = 'movie-wrapper__title  modal-container';
-    const img = document.createElement('img');
-    img.className = 'movie-wrapper__img';
-    img.src = item.image.medium;
-    const name = document.createElement('h3');
-    name.innerHTML = `${item.name}`;
-    const likes = document.createElement('div');
-    likes.className = 'movie-wrapper__likes';
-    const span = document.createElement('span');
-    const like = document.createElement('i');
-    like.className = 'fas fa-heart';
-    likes.append(like, span);
-    details.append(name, likes);
-    const commentButton = document.createElement('button');
-    commentButton.type = 'button';
-    commentButton.innerHTML = 'Comments';
-    commentButton.className = 'movie-wrapper__comment-button open-moda';
-    commentButton.id = 'open-modal';
-    commentButton.addEventListener('click', () => {
-      createPopUp(item);
-      modalContainer.classList.add('show-modal');
-      const closeBtn = document.querySelectorAll('.close-modal');
-      closeBtn.forEach((c) => c.addEventListener('click', closeModal));
-      console.log(item);
+    const movieSection = document.querySelector(`#${section}-section`);
+    movieSection.innerHTML = '';
+    movieList.forEach((item) => {
+        const mainDiv = document.createElement('div');
+        mainDiv.className = 'movie-wrapper modal-container';
+        mainDiv.id = `${section}${item.id}`;
+        const details = document.createElement('div');
+        details.className = 'movie-wrapper__title  modal-container';
+        const img = document.createElement('img');
+        img.className = 'movie-wrapper__img';
+        img.src = item.image.medium;
+        const name = document.createElement('h3');
+        name.innerHTML = `${item.name}`;
+        const likes = document.createElement('div');
+        likes.className = 'movie-wrapper__likes';
+        const span = document.createElement('span');
+        const like = document.createElement('i');
+        like.className = 'fas fa-heart';
+        likes.append(like, span);
+        details.append(name, likes);
+        const commentButton = document.createElement('button');
+        commentButton.type = 'button';
+        commentButton.innerHTML = 'Comments';
+        commentButton.className = 'movie-wrapper__comment-button open-moda';
+        commentButton.id = 'open-modal';
+        commentButton.addEventListener('click', () => {
+            createPopUp(item);
+            modalContainer.classList.add('show-modal');
+            const closeBtn = document.querySelectorAll('.close-modal');
+            closeBtn.forEach((c) => c.addEventListener('click', closeModal));
+            console.log(item);
+        });
+        mainDiv.append(img, details, commentButton);
+        const reserveButton = document.createElement('button');
+        reserveButton.type = 'button';
+        reserveButton.innerHTML = 'Reservations';
+        reserveButton.className = 'movie-wrapper__comment-button';
+        mainDiv.append(reserveButton);
+        movieSection.appendChild(mainDiv);
+        like.addEventListener('click', () => {
+            setLike(`${section}${item.id}`, appId);
+            const number = like.parentNode.lastChild.textContent.split(' ');
+            like.parentNode.lastChild.innerHTML = `${Number(number[0]) + 1} likes`;
+        });
     });
-    mainDiv.append(img, details, commentButton);
-    const reserveButton = document.createElement('button');
-    reserveButton.type = 'button';
-    reserveButton.innerHTML = 'Reservations';
-    reserveButton.className = 'movie-wrapper__comment-button';
-    mainDiv.append(reserveButton);
-    movieSection.appendChild(mainDiv);
-    like.addEventListener('click', () => {
-      setLike(`${section}${item.id}`, appId);
-      const number = like.parentNode.lastChild.textContent.split(' ');
-      like.parentNode.lastChild.innerHTML = `${Number(number[0]) + 1} likes`;
-    });
-  });
-  updateLikes(appId);
+    updateLikes(appId);
 };
 
 export const showModal = (openButton, modalContent) => {
-  const openBtn = document.getElementById(openButton);
-  const modalContainer = document.getElementById(modalContent);
+    const openBtn = document.getElementById(openButton);
+    const modalContainer = document.getElementById(modalContent);
 
-  if (openBtn && modalContainer) {
-    openBtn.addEventListener('click', () => {
-      modalContainer.classList.add('show-modal');
-    });
-  }
+    if (openBtn && modalContainer) {
+        openBtn.addEventListener('click', () => {
+            modalContainer.classList.add('show-modal');
+        });
+    }
 };
 
 export { displayMovies as default };

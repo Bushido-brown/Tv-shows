@@ -24,27 +24,27 @@ const updateLikes = (appID) => {
     });
   });
 };
- const  setComment = async( id, name, Addcomment,appID)=>{
-   const connect = await fetch(` ${baseURL}${appID}/comments`,{
+const setComment = async (userComment) => {
+  const connect = await fetch(` ${baseURL}${appID}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      item_id: id,
-      username: name,
-      comment: Addcomment,
+      item_id: userComment.id,
+      username: userComment.name,
+      comment: userComment.Addcomment,
     }),
-  
-   })
-  const  comment = await  connect .text()
-  return comment
- }
- 
-  const getComment = async(itemid)=>{
-const response = await fetch(` ${baseURL}${appID}/comments?item_id${itemid}`)
-const comments =await response.json()
-return comments 
-  }
 
-export { updateLikes, setLike,setComment,getComment };
+  })
+  const comment = await connect.text()
+  return comment
+}
+
+const getComment = async (itemid) => {
+  const response = await fetch(` ${baseURL}${appID}/comments?item_id${itemid}`)
+  const comments = await response.json()
+  return comments
+}
+
+export { updateLikes, setLike, setComment, getComment };
