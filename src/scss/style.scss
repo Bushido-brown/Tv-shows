@@ -296,7 +296,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+ .adjust{
 
+ }
 /*=============== MODAL ===============*/
 .container {
   margin-left: 1rem;
@@ -361,7 +363,8 @@ img {
 }
 
 .modal__img {
-  width: 150px;
+  width: 100%;
+  height: 100vh;
   margin-bottom: .75rem;
 }
 
@@ -425,7 +428,8 @@ img {
   }
 
   .modal__img {
-    width: 170px;
+    width: 100%;
+    height: 50vh;
   }
 }
 
@@ -451,7 +455,6 @@ img {
   .modal-section {
     clip-path: circle(150% at 100% 100%);
     transition: 0.3s linear clip-path;
-    position: absolute;
     padding-top: 50px;
     top: 0;
     left: 0;
