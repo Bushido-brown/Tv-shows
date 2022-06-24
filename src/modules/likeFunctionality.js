@@ -24,7 +24,7 @@ const updateLikes = (appID) => {
     });
   });
 };
-const setComment = async (userComment) => {
+const setComment = async (userComment,appID) => {
   const connect = await fetch(` ${baseURL}${appID}/comments`, {
     method: 'POST',
     headers: {
@@ -41,8 +41,8 @@ const setComment = async (userComment) => {
   return comment
 }
 
-const getComment = async (itemid) => {
-  const response = await fetch(` ${baseURL}${appID}/comments?item_id${itemid}`)
+const getComment = async (itemid,appID) => {
+  const response = await fetch(` ${baseURL}${appID}/comments?item_id=${itemid}`)
   const comments = await response.json()
   return comments
 }
