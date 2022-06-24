@@ -147,6 +147,11 @@ table.coverage {
   padding: 0;
 }
 
+.coverage-summary td,
+.coverage-summary th {
+  padding: 10px;
+}
+
 table.coverage td {
   margin: 0;
   padding: 0;
@@ -207,11 +212,6 @@ table.coverage td span.cline-any {
   border: 1px solid #ddd;
 }
 
-.coverage-summary td,
-.coverage-summary th {
-  padding: 10px;
-}
-
 .coverage-summary tbody {
   border: 1px solid #bbb;
 }
@@ -249,9 +249,6 @@ table.coverage td span.cline-any {
   min-width: 120px !important;
 }
 
-.coverage-summary tfoot td {
-}
-
 .coverage-summary .sorter {
   height: 10px;
   width: 7px;
@@ -278,6 +275,12 @@ table.coverage td span.cline-any {
   color: #111;
 }
 
+.cover-fill,
+.cover-empty {
+  display: inline-block;
+  height: 12px;
+}
+
 /* dark red */
 .red.solid,
 .status-line.low,
@@ -285,8 +288,19 @@ table.coverage td span.cline-any {
   background: #c21f39;
 }
 
+.chart {
+  line-height: 0;
+}
+
 .low .chart {
   border: 1px solid #c21f39;
+}
+
+/* medium red */
+.cstat-no,
+.fstat-no,
+.cbranch-no {
+  background: #f6c6ce;
 }
 
 .highlighted,
@@ -294,14 +308,6 @@ table.coverage td span.cline-any {
 .highlighted .fstat-no,
 .highlighted .cbranch-no {
   background: #c21f39 !important;
-}
-
-/* medium red */
-.cstat-no,
-.fstat-no,
-.cbranch-no,
-.cbranch-no {
-  background: #f6c6ce;
 }
 
 /* light red */
@@ -371,16 +377,6 @@ span.cline-neutral {
   padding-bottom: 4px;
   line-height: 1;
   color: #888;
-}
-
-.cover-fill,
-.cover-empty {
-  display: inline-block;
-  height: 12px;
-}
-
-.chart {
-  line-height: 0;
 }
 
 .cover-empty {
