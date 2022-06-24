@@ -1,4 +1,4 @@
-import { updateLikes, setLike, setComment,getComment } from './likeFunctionality.js';
+import { updateLikes, setLike, setComment, getComment } from './likeFunctionality.js';
 import List from './newmodel.js';
 
 const createmodal = document.querySelector('.modal__content');
@@ -7,10 +7,10 @@ const nameValue = document.getElementById('name')
 const commentValue = document.getElementById('comment')
 const submitBtn = document.getElementById('submit');
 
-const  createPopUp = (item) => {
+const createPopUp = (item) => {
 
-   
-        createmodal.innerHTML = `
+
+    createmodal.innerHTML = `
         <img class='modal__img ' src=${item.image.original}>   
 
   <button class="modal-section__back-btn close-modal" id="backBtn close-modal">
@@ -96,7 +96,7 @@ const  createPopUp = (item) => {
 </section>
 
 `;
-   
+
 }
 
 
@@ -126,13 +126,13 @@ const displayMovies = async (movieList, appId, section) => {
         commentButton.innerHTML = 'Comments';
         commentButton.className = 'movie-wrapper__comment-button open-moda';
         commentButton.id = 'open-modal';
-        commentButton.addEventListener('click',  async() => {
+        commentButton.addEventListener('click', async () => {
             createPopUp(item);
             modalContainer.classList.add('show-modal');
             const closeBtn = document.querySelectorAll('.close-modal');
             closeBtn.forEach((c) => c.addEventListener('click', closeModal));
-            getInputData(item,appId)
-            getData(item,appId)
+            getInputData(item, appId)
+            getData(item, appId)
             console.log(item);
         });
         mainDiv.append(img, details, commentButton);
@@ -169,27 +169,26 @@ function closeModal() {
 }
 
 
-const getInputData= (item,appID)=>{
+const getInputData = (item, appID) => {
     if (nameValue && commentValue) {
-        const  id = item.id
-        const newuser = new List(nameValue.value, commentValue.value,id)
-      const get = setComment(newuser,appID)
+        const id = item.id
+        const newuser = new List(nameValue.value, commentValue.value, id)
+        const get = setComment(newuser, appID)
         nameValue.value = '';
         commentValue.value = '';
         console.log(newuser)
     }
 
- }
-const getData = async (item,appID)=>{
-
-const comment = await getComment( item.id,appID)
-console.log(comment)
 }
-submitBtn.addEventListener('click',(e)=>{
+
+const getData = async (item, appID) => {
+    const comment = await getComment(item.id, appID)
+    console.log(comment)
+}
+submitBtn.addEventListener('click', (e) => {
     e.preventDefault()
     return getInputData()
 })
-
 
 
 
