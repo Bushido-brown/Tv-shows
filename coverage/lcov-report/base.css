@@ -152,6 +152,10 @@ table.coverage {
   padding: 10px;
 }
 
+.coverage-summary td {
+  border-right: 1px solid #bbb;
+}
+
 table.coverage td {
   margin: 0;
   padding: 0;
@@ -214,10 +218,6 @@ table.coverage td span.cline-any {
 
 .coverage-summary tbody {
   border: 1px solid #bbb;
-}
-
-.coverage-summary td {
-  border-right: 1px solid #bbb;
 }
 
 .coverage-summary td:last-child {
