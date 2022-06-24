@@ -1,4 +1,4 @@
-import { updateLikes, setLike, setComment } from './likeFunctionality.js';
+import { updateLikes, setLike, setComment,getComment } from './likeFunctionality.js';
 import List from './newmodel.js';
 
 const createmodal = document.querySelector('.modal__content');
@@ -7,7 +7,16 @@ const nameValue = document.querySelector('.name')
 const commentValue = document.querySelector('.comment')
 const submitBtn = document.querySelector('.submit');
 
-function createPopUp(item) {
+const  createPopUp = (item) => {
+    const  getcomment = getComment(item.id)
+    getcomment.forEach((comment)={
+
+
+
+
+    })
+
+
     createmodal.innerHTML = `
                 <img class='modal__img ' src=${item.image.original}>   
   
@@ -119,6 +128,7 @@ function createPopUp(item) {
 
 
 
+
 export const getInputData = () => {
     if (nameValue && commentValue) {
         const newuser = new List(nameValue.value, commentValue.value)
@@ -163,11 +173,12 @@ const displayMovies = async (movieList, appId, section) => {
         commentButton.innerHTML = 'Comments';
         commentButton.className = 'movie-wrapper__comment-button open-moda';
         commentButton.id = 'open-modal';
-        commentButton.addEventListener('click', () => {
+        commentButton.addEventListener('click',  async() => {
             createPopUp(item);
             modalContainer.classList.add('show-modal');
             const closeBtn = document.querySelectorAll('.close-modal');
             closeBtn.forEach((c) => c.addEventListener('click', closeModal));
+            getcomment(item.id)
             console.log(item);
         });
         mainDiv.append(img, details, commentButton);
