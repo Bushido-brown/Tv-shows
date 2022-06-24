@@ -5,8 +5,9 @@ const createmodal = document.querySelector('.modal__content');
 const modalContainer = document.getElementById('modal-container');
 const nameValue = document.querySelector('.name')
 const commentValue = document.querySelector('.comment')
+const submitBtn = document.querySelector('.submit');
 
-function createPopUp(item,) {
+function createPopUp(item) {
     createmodal.innerHTML = `
                 <img class='modal__img ' src=${item.image.original}>   
   
@@ -106,8 +107,8 @@ function createPopUp(item,) {
               <div> <input type="text" name="name" id="name" placeholder="Your Name" required></div>
                <div>    <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your insights"    required></textarea></div>
                
-              <button type="submit">Comment</button>
-          </form>
+               <button type="submit" class="submit"> Submit <i class="fa-solid fa-check"></i></button>
+               </form>
               </div>
              
               </div>
@@ -126,6 +127,10 @@ export const getInputData = () => {
         commentValue.value = '';
     }
 }
+
+
+
+
 
 function closeModal() {
     const modalContainer = document.getElementById('modal-container');

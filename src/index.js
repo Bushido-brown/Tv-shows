@@ -3,7 +3,7 @@ import './scss/style.scss';
 import getMovieData from './modules/consumeTVMazeAPI.js';
 import displayMovies from './modules/displayMovies.js';
 import totalItems from './modules/allItemsCounter.js';
-import { getInputData } from './modules/displayMovies.js';
+// import { getInputData } from './modules/displayMovies.js';
 
 const dvdID = 'zggEBXzpFcQqjDxvMhMz';
 const bluID = 'DiufW768skxheMu2XO3y';
@@ -58,9 +58,3 @@ bluLink.addEventListener('click', () => {
   aboutSection.classList.add('toggle');
   bluSection.classList.remove('toggle');
 });
-
-submitBtn = document.querySelector('.submit')
-submitBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  return getInputData
-})
