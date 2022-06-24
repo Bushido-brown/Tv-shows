@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  font-family: Helvetica Neue, Helvetica, Arial;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #333;
 }
@@ -16,8 +16,8 @@ body {
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -94,7 +94,7 @@ a:hover {
   display: block;
 }
 
-.clearfix:after {
+.clearfix::after {
   content: "";
   display: block;
   height: 0;
@@ -234,8 +234,6 @@ table.coverage td span.cline-any {
   border-right: none !important;
 }
 
-.coverage-summary th.pct {
-}
 .coverage-summary th.pic,
 .coverage-summary th.abs,
 .coverage-summary td.pct,
@@ -273,11 +271,13 @@ table.coverage td span.cline-any {
 .status-line {
   height: 10px;
 }
+
 /* yellow */
 .cbranch-no {
   background: yellow !important;
   color: #111;
 }
+
 /* dark red */
 .red.solid,
 .status-line.low,
@@ -295,6 +295,7 @@ table.coverage td span.cline-any {
 .highlighted .cbranch-no {
   background: #c21f39 !important;
 }
+
 /* medium red */
 .cstat-no,
 .fstat-no,
@@ -302,20 +303,24 @@ table.coverage td span.cline-any {
 .cbranch-no {
   background: #f6c6ce;
 }
+
 /* light red */
 .low,
 .cline-no {
   background: #fce1e5;
 }
+
 /* light green */
 .high,
 .cline-yes {
   background: rgb(230, 245, 208);
 }
+
 /* medium green */
 .cstat-yes {
   background: rgb(161, 215, 106);
 }
+
 /* dark green */
 .status-line.high,
 .high .cover-fill {
@@ -325,6 +330,7 @@ table.coverage td span.cline-any {
 .high .chart {
   border: 1px solid rgb(77, 146, 33);
 }
+
 /* dark yellow (gold) */
 .status-line.medium,
 .medium .cover-fill {
@@ -334,6 +340,7 @@ table.coverage td span.cline-any {
 .medium .chart {
   border: 1px solid #f9cd0b;
 }
+
 /* light yellow */
 .medium {
   background: #fff4c2;
