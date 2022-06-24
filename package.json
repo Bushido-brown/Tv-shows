@@ -8,6 +8,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "test": "jest --coverage",
     "test": "jest --env=jsdom --coverage",
     "watch": "jest --coverage --watchAll",
     "webhint": "npx hint .",
