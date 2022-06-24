@@ -1,4 +1,7 @@
-const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+import axios from "axios";
+import { baseURL, appID, } from "./utils";
+
+
 
 const setLike = async (id, appID) => {
   const connect = await fetch(`${baseURL}${appID}/likes/`, {
@@ -24,27 +27,36 @@ const updateLikes = (appID) => {
     });
   });
 };
-const setComment = async (userComment,appID) => {
-  const connect = await fetch(` ${baseURL}${appID}/comments`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      item_id: userComment.id,
-      username: userComment.name,
-      comment: userComment.Addcomment,
-    }),
-
-  })
-  const comment = await connect.text()
-  return comment
+const addComment = async (name, comment, id) => {
+  if (name && comment) {
+    const newComment = {
+      item_id: id,
+      name: `${name}`,
+      comment: `${comment}`,
+    }
+    await axios.post(`${baseURL}/${appID}/comments`, newComment)
+    return true
+  }
+  return false
 }
 
-const getComment = async (itemid,appID) => {
-  const response = await fetch(` ${baseURL}${appID}/comments?item_id=${itemid}`)
-  const comments = await response.json()
-  return comments
+
+const fetchComment = async (itemid) => {
+  const comment = await fetch(
+    `${baseURL}/${appID}/comments?item_id=${itemid}`,
+  )
+  const comments = await comment.json()
+  return comments.length ? comments : [];
 }
 
-export { updateLikes, setLike, setComment, getComment };
+const getTotalComments = async (itemid) => {
+  const comment = await fetch(
+    ` ${baseURL}${appID} /comments?item_id=${itemid}`
+  )
+  const comments = await comment.response.json()
+  comments.length === undefined ? 0 : comments.length
+
+}
+
+
+export { updateLikes, setLike, addComment, fetchComment, getTotalComments };
