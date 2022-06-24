@@ -1,9 +1,7 @@
 import './scss/style.scss';
-
 import getMovieData from './modules/consumeTVMazeAPI.js';
 import displayMovies from './modules/displayMovies.js';
 import totalItems from './modules/allItemsCounter.js';
-import { showModal } from './modules/newmodel';
 
 const dvdID = 'zggEBXzpFcQqjDxvMhMz';
 const bluID = 'DiufW768skxheMu2XO3y';
@@ -19,7 +17,6 @@ const bluray = 'girls';
 const homeItems = document.querySelector('.movie-section__items');
 getMovieData(0, dvd, 50).then((movieList) => {
   displayMovies(movieList, dvdID, 'movie');
-
   const all = document.querySelectorAll('#movie-section > .movie-wrapper');
   totalItems(all, homeItems);
 });
@@ -27,7 +24,6 @@ getMovieData(0, dvd, 50).then((movieList) => {
 const bluItems = document.querySelector('.bluRay-section__items');
 getMovieData(51, bluray, 25).then((movieList) => {
   displayMovies(movieList, bluID, 'bluRay');
-  // showModal(movieList, 'open-modal', 'modal-container')
   const all = document.querySelectorAll('#bluRay-section > .movie-wrapper');
   totalItems(all, bluItems);
 });
@@ -58,4 +54,3 @@ bluLink.addEventListener('click', () => {
   aboutSection.classList.add('toggle');
   bluSection.classList.remove('toggle');
 });
-showModal();

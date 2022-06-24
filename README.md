@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# JavaScript Capstone
+# JavaScript Capstone 2
 
 > A javascript application that displays movies and TV shows from the TVMAZE API
 
@@ -42,15 +42,15 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@Bushido-brown](https://github.com/Bushido-brown)
-- Twitter: [@tuzyorizu](https://twitter.com/tuzyorizu)
-- LinkedIn: [Tochukwu Orizu](https://www.linkedin.com/in/tochukwu-orizu-612b09206/)
+- GitHub: [@ShingiraiBhengesa](https://github.com/ShingiraiBhengesa)
+- Twitter: [@bhengesa](https://twitter.com/twitterhandle)
+- LinkedIn: [Shingirai Bhengesa](https://www.linkedin.com/in/shingirai-bhengesa-612b09206/)
 
 👤 **Author2**
 
-- GitHub: [@](https://github.com/)
-- Twitter: [@](https://twitter.com/)
-- LinkedIn: [@](https://linkedin.com/in/)
+- GitHub: [@jr-cast](https://github.com/jr-cast)
+- Twitter: [@josercastanos](https://twitter.com/josercastanos)
+- LinkedIn: [@jr-cast](https://linkedin.com/in/jr-cast)
 
 ## 🤝 Contributing
 
