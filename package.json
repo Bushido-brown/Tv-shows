@@ -1,11 +1,14 @@
 {
-  "name": "javacript-capstone",
+  "name": "javascript-capstone",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --env=jsdom --coverage",
     "watch": "jest --coverage --watchAll",
     "webhint": "npx hint .",
     "stylelint": "npx stylelint **/*.{css,scss} --fix",
@@ -16,22 +19,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bushido-brown/JavaScript-Capstone.git"
+    "url": "git+https://github.com/ShingiraiBhengesa/Javascript-Capstone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bushido-brown/JavaScript-Capstone/issues"
+    "url": "https://github.com/ShingiraiBhengesa/Javascript-Capstone/issues"
   },
-  "homepage": "https://github.com/Bushido-brown/JavaScript-Capstone#readme",
+  "homepage": "https://github.com/ShingiraiBhengesa/Javascript-Capstone#readme",
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.12",
     "css-loader": "^6.7.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.26.0",
+    "eslint": "^8.15.0",
     "hint": "^6.2.0",
     "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
