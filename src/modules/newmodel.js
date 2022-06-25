@@ -1,5 +1,6 @@
 import { addComment, fetchComment, } from "./likeFunctionality";
 import Swal from 'sweetalert2';
+import displayModal from "./modal";
 
 const modalDisplay = (item) => {
   Swal.fire({
@@ -31,26 +32,29 @@ const modalDisplay = (item) => {
   const id = item.id
   fetchComment(id).then((data) => {
     document.getElementById('total-comments').innerHTML = `(${data.length})`;
-    if (item.length) {
-      item.forEach((data) => {
+    if (data.length) {
+      data.forEach((dataitem) => {
         const li = document.createElement('li')
         li.className = 'comment';
-        li.textContent = `${data.creation_date} ${data.username}:${data.comment}`
+        li.textContent = `${dataitem.creation_date} ${dataitem.username}:${dataitem.comment}`
         document.querySelector('.comments-list').appendChild(li)
       })
     }
   })
-  console.log(id)
+
+
   const nameInput = document.querySelector('#name');
   const commentInput = document.querySelector('#message');
 
   document.querySelector('.form').addEventListener('submit', (e) => {
-    e.preventDefault()
-
+    e.preventDefault();
     addComment(nameInput.value, commentInput.value, id).then(() => {
-      // Swal.close()
-    })
-  })
-}
+      console.log(nameInput.value, commentInput.value, id)
+      Swal.close();
+      displayModal(item);
+    });
+  });
+};
+
 
 export default modalDisplay

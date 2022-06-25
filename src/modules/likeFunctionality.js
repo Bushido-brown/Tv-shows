@@ -31,10 +31,11 @@ const addComment = async (name, comment, id) => {
   if (name && comment) {
     const newComment = {
       item_id: id,
-      name: `${name}`,
+      username: `${name}`,
       comment: `${comment}`,
     }
     await axios.post(`${baseURL}/${appID}/comments`, newComment)
+    console.log(newComment)
     return true
   }
   return false
@@ -49,14 +50,18 @@ const fetchComment = async (itemid) => {
   return comments.length ? comments : [];
 }
 
-const getTotalComments = async (itemid) => {
-  const comment = await fetch(
-    ` ${baseURL}${appID} /comments?item_id=${itemid}`
-  )
-  const comments = await comment.response.json()
-  comments.length === undefined ? 0 : comments.length
+const getTotalComments = async (itemID) => {
+  try {
+    const response = await fetch(
+      `${baseURL}/${appID}/comments?item_id=${itemID}`,
+    );
+    const data = await response.json();
+    return data.length === undefined ? 0 : data.length;
+  } catch (error) {
+    return 0;
+  }
+};
 
-}
 
 
 export { updateLikes, setLike, addComment, fetchComment, getTotalComments };

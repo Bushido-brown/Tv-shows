@@ -1,11 +1,11 @@
 import { updateLikes, setLike, } from './likeFunctionality.js';
-import modalDisplay from './newmodel';
+import displayModal from './modal.js';
+
 
 const displayMovies = async (movieList, appId, section) => {
     const movieSection = document.querySelector(`#${section}-section`);
     movieSection.innerHTML = '';
     movieList.forEach((item) => {
-        console.log(item)
         const mainDiv = document.createElement('div');
         mainDiv.className = 'movie-wrapper modal-container';
         mainDiv.id = `${section}${item.id}`;
@@ -29,7 +29,7 @@ const displayMovies = async (movieList, appId, section) => {
         commentButton.className = 'movie-wrapper__comment-button open-moda';
         commentButton.id = 'open-modal';
         commentButton.addEventListener('click', async () => {
-            modalDisplay(item);
+            displayModal(item);
         });
         mainDiv.append(img, details, commentButton);
         const reserveButton = document.createElement('button');
