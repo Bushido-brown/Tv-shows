@@ -15,3 +15,17 @@ LH:6
 BRF:0
 BRH:0
 end_of_record
+TN:
+SF:src\modules\commentDataMock.js
+FN:2,commentDataMock
+FNF:1
+FNH:1
+FNDA:1,commentDataMock
+DA:3,1
+DA:4,1
+DA:5,1
+LF:3
+LH:3
+BRF:0
+BRH:0
+end_of_record

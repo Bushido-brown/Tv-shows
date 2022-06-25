@@ -8,7 +8,6 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
     "test": "jest --env=jsdom --coverage",
     "watch": "jest --coverage --watchAll",
     "webhint": "npx hint .",
@@ -20,18 +19,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShingiraiBhengesa/Javascript-Capstone.git"
+    "url": "git+https://github.com/Bushido-brown/Javascript-Capstone.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ShingiraiBhengesa/Javascript-Capstone/issues"
+    "url": "https://github.com/Bushido-brown/Javascript-Capstone/issues"
   },
-  "homepage": "https://github.com/ShingiraiBhengesa/Javascript-Capstone#readme",
+  "homepage": "https://github.com/Bushido-brown/Javascript-Capstone#readme",
   "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-transform-modules-commonjs": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "babel-jest": "^28.1.0",
     "css-loader": "^6.7.1",
-    "eslint": "^8.15.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
     "hint": "^6.2.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
@@ -47,6 +52,7 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
     "html-webpack-plugin": "^5.5.0",
     "license-webpack-plugin": "^4.0.2"
   }

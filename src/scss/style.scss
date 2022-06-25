@@ -1,5 +1,5 @@
-@import "typography";
-@import "mixins";
+@import 'typography';
+@import 'mixins';
 
 *,
 *::before,
@@ -32,7 +32,7 @@ header {
     @include font-h;
 
     text-decoration: none;
-    background-image: url(../images/logo.png);
+    background-image: url(../images/logo.svg);
     background-repeat: no-repeat;
     height: 50px;
     width: 110px;
