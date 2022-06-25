@@ -12,8 +12,10 @@ const displayMovies = async (movieList, appId, section) => {
     const img = document.createElement('img');
     img.className = 'movie-wrapper__img';
     img.src = item.image.medium;
+    img.id = `img_${item.id}`;
     const name = document.createElement('h3');
     name.innerHTML = `${item.name}`;
+    name.id = `name${item.id}`;
     const likes = document.createElement('div');
     likes.className = 'movie-wrapper__likes';
     const span = document.createElement('span');
