@@ -1,56 +1,52 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# JavaScript Capstone
 
-> Description the project.
-
+> A javascript application that displays movies and TV shows from the TVMAZE API
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Javascript
+- Webpack
+- HTML&CSS
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
 
-
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Code Editor
+- Git installed
+- Node js installed
+
 ### Setup
 
-### Install
-
-### Usage
+- To clone the repository run `git clone` in your terminal
+- Next run `npm install` to install dependances
+- To run the project run `npm start` this will open your web browser on localhost:8080
 
 ### Run tests
 
-### Deployment
-
-
+- Run `npm tets` to jest test results
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Bushido-brown](https://github.com/Bushido-brown)
+- Twitter: [@tuzyorizu](https://twitter.com/Bushido-brown)
+- LinkedIn: [Tochukwu Orizu](https://www.linkedin.com/in/tochukwu-orizu-52187013a/)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@HeDevedUp](https://github.com/HeDevdUp)
+- Twitter: [@HeDevdUp](https://twitter.com/HeDevdUp)
+- LinkedIn: [Jesse Uzoma](https://linkedin.com/in/jesse-uzoma)
 
 ## 🤝 Contributing
 

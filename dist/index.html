@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/0a86823ed7.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/d2a3ee28df.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>JS Capstone</title>
+<script defer src="main_bundle.js"></script></head>
+
+<body>
+  <header>
+    <a href="#" class="header-brand"></a>
+    <button class="navbar__menu-button" id="menu__button" type="button" aria-label="Toggle navigation">
+      <i class="fas fa-bars" id="menu__icon-bars"></i>
+      <i class="fas fa-times box__hide" id="menu__icon-close"></i>
+    </button>
+    <nav class="header-nav" id="header-nav">
+      <ul>
+        <li>
+          <a href="#" class="active" id="movie__link">
+            DVD
+            <span class="movie-section__items"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="blu-ray__link">
+            Blu-ray
+            <span class="bluRay-section__items"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="about__link">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="movie-section" class="movie-sec"></section>
+  <section id="about-section" class="about-sec toggle">
+    <div class="about-section__container">
+      <h2>About us</h2>
+      <p>
+
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+        tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+        quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+        sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+        recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
+        minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
+        quibusdam sed amet tempora.
+        <br />
+        <br />
+        Founded by Microverse
+    </div>
+  </section>
+  <section id="bluRay-section" class="bluRay-sec toggle"></section>
+  <section id="details" class="details hidden">
+    <section id='inner-details' class="inner-details">
+      <div class="detail-button-container">
+        <i id='closeBtn' class="fa-solid fa-square-xmark fa-3x"></i>
+      </div>
+    </section>
+  </section>
+  <footer>
+    <p class="copy">&copy; Copyright 2022, Microverse</p>
+  </footer>
+</body>
+
+</html>

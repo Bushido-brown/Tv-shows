@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Spectral:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+.details {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(193, 199, 208, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-details {
+  width: 100%;
+  max-width: 90em;
+  padding: 4em;
+  height: calc(100% - 3.5em);
+  max-height: 70em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: black;
+  font-size: 0.8em;
+  overflow-y: auto;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.movie-wrapper {
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.movie-wrapper:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.custom {
+  border: 3px solid black;
+  width: 300px;
+  height: 300px;
+}
+
+.cardTitle {
+  color: black;
+  font-size: 2.5em;
+}
+
+.summary {
+  color: white;
+  font-size: 1.5em;
+}
+
+.innerWrap {
+  display: flex;
+  align-items: center;
+  height: 25em;
+}
+
+.innerWrapDetails {
+  display: flex;
+  height: 23em;
+  flex-direction: column;
+  padding: 1.5em;
+  gap: 1em;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.detail-button-container {
+  width: 100%;
+  height: 2.5em;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.commentSection {
+  width: 100%;
+}
+
+.commentSection > * {
+  display: block;
+  margin: 1rem;
+}
+
+.commentSection input {
+  padding: 0.5em;
+  font-size: 1.2em;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  width: 95%;
+}
+
+.commentSection button {
+  border-radius: 5%;
+  width: 5rem;
+  height: 20px;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.commentSection button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.commentsWrapper {
+  width: 100%;
+  border: 2px solid white;
+  padding: 1.5em;
+  margin-bottom: 1em;
+}
+
+.commentsWrapper h2 {
+  margin-bottom: 0.5em;
+}
+
+.btn {
+  border-color: white;
+  border-radius: 0%;
+  color: black;
+  background-color: white;
+  font-size: larger;
+}
